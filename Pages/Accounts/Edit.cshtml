@@ -1,0 +1,45 @@
+﻿@page
+@model MovieReviews1.Pages.Accounts.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Account</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Account.Id" />
+            <div class="form-group">
+                <label asp-for="Account.ReviewsHistory" class="control-label"></label>
+                <input asp-for="Account.ReviewsHistory" class="form-control" />
+                <span asp-validation-for="Account.ReviewsHistory" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Account.RatingHistory" class="control-label"></label>
+                <input asp-for="Account.RatingHistory" class="form-control" />
+                <span asp-validation-for="Account.RatingHistory" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Account.PrivateInformation" class="control-label"></label>
+                <input asp-for="Account.PrivateInformation" class="form-control" />
+                <span asp-validation-for="Account.PrivateInformation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

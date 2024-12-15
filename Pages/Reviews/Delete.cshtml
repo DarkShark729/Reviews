@@ -1,0 +1,46 @@
+﻿@page
+@model MovieReviews1.Pages.Reviews.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>review</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.review.Game)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.review.Game.GameId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.review.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.review.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.review.ReviewDescription)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.review.ReviewDescription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.review.Rating)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.review.Rating)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="review.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
